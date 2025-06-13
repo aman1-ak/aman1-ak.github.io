@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian RO System - Taaza Paani Har Din Har Pal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .nav-link.active {
+            color: #1e40af !important;
+            border-bottom: 2px solid #1e40af;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .gallery-img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        .admin-sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .admin-sidebar.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-blue-800">Indian RO System</h1>
+                        <p class="text-xs text-gray-600">Taaza Paani Har Din Har Pal</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2 active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('products')">Products</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('gallery')">Gallery</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('about')">About</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('testimonials')">Testimonials</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('faq')">FAQ</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('contact')">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-btn text-gray-700 hover:text-blue-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('products')">Products</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('services')">Services</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('gallery')">Gallery</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('about')">About</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('testimonials')">Testimonials</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('faq')">FAQ</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918929472598" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main class="mt-16">
+        <!-- HOME PAGE -->
+        <section id="home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="hero-bg text-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Taaza Paani Har Din Har Pal</h1>
+                        <p class="text-xl md:text-2xl mb-8">Premium RO Water Purification Solutions in Delhi NCR</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>Book RO Service Now
+                            </a>
+                            <a href="tel:8929472598" class="bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Overview -->
+            <div class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Main Services</h2>
+                        <p class="text-gray-600">Professional RO solutions for homes and offices</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO Installation</h3>
+                            <p class="text-gray-600">Professional installation for all RO brands</p>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-calendar-check text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO AMC</h3>
+                            <p class="text-gray-600">Annual Maintenance Contracts from ₹1499/year</p>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-wrench text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO Repair</h3>
+                            <p class="text-gray-600">Quick repair service & technician visits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Indian RO System?</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <i class="fas fa-shipping-fast text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Fast Service</h3>
+                            <p class="text-gray-600">Same day installation & repair</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-user-check text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Experienced Technicians</h3>
+                            <p class="text-gray-600">Skilled & verified professionals</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-rupee-sign text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Affordable Prices</h3>
+                            <p class="text-gray-600">Transparent pricing, no hidden costs</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-clock text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
+                            <p class="text-gray-600">Round the clock customer service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="py-16 bg-blue-800 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <a href="tel:8929472598" class="bg-white text-blue-800 p-4 rounded-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-phone text-2xl mb-2"></i>
+                            <div class="font-semibold">8929472598</div>
+                        </a>
+                        <a href="https://wa.me/918929472598" class="bg-green-500 p-4 rounded-lg hover:bg-green-600 transition duration-300">
+                            <i class="fab fa-whatsapp text-2xl mb-2"></i>
+                            <div class="font-semibold">WhatsApp</div>
+                        </a>
+                        <a href="mailto:indianrosystem1@gmail.com" class="bg-red-500 p-4 rounded-lg hover:bg-red-600 transition duration-300">
+                            <i class="fas fa-envelope text-2xl mb-2"></i>
+                            <div class="font-semibold">Email Us</div>
+                        </a>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <i class="fas fa-map-marker-alt text-2xl mb-2"></i>
+                            <div class="font-semibold">Sector 31, Noida</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS PAGE -->
+        <section id="products" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our RO Products</h1>
+                    <p class="text-gray-600">Premium water purifiers for every home and office</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES PAGE -->
+        <section id="services" class="page-section py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h1>
+                    <p class="text-gray-600">Complete RO solutions for all your water purification needs</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="services-grid">
+                    <!-- Services will be loaded dynamically -->
+                </div>
+                
+                <!-- Why Choose Us -->
+                <div class="mt-16 bg-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-bold text-center mb-8">Why Choose Indian RO System?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>24×7 Service Support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Experienced & Verified Technicians</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Fast Delivery & Installation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>100% Genuine Parts</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Affordable Pricing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Service Coverage in Delhi NCR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY PAGE -->
+        <section id="gallery" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Gallery</h1>
+                    <p class="text-gray-600">See our work and installations</p>
+                </div>
+                
+                <!-- Gallery Filters -->
+                <div class="flex flex-wrap justify-center mb-8 gap-4">
+                    <button class="gallery-filter bg-blue-600 text-white px-4 py-2 rounded-lg" data-filter="all">All</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="installations">Installations</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="technicians">Technicians</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="products">Products</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="customers">Happy Customers</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                    <!-- Gallery items will be loaded dynamically -->
+                </div>
+
+                <!-- CTA Section -->
+                <div class="mt-16 text-center bg-blue-50 p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Want to be featured on our gallery?</h2>
+                    <p class="mb-4">Share your Indian RO System installation photos on WhatsApp and get ₹100 cashback!</p>
+                    <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page-section py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">About Indian RO System</h1>
+                    <p class="text-gray-600">Your trusted partner for clean and pure water</p>
+                </div>
+
+                <!-- Who We Are -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">Who We Are</h2>
+                    <p class="text-gray-700 mb-4">
+                        Indian RO System is one of the most trusted and rapidly growing companies in the field of water purification solutions across Delhi NCR. Founded with the mission to deliver clean, safe, and affordable drinking water to every household and business, we offer a complete range of RO systems, repair services, AMC plans, and genuine spare parts.
+                    </p>
+                    <p class="text-gray-700">
+                        We are based in Sector 31, Noida, and serve customers across Delhi, Ghaziabad, Greater Noida, and surrounding areas. From installation to maintenance, our team ensures timely, transparent, and high-quality service.
+                    </p>
+                </div>
+
+                <!-- Our Mission -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+                    <p class="text-gray-700 mb-4">At Indian RO System, our mission goes beyond selling RO machines. We are committed to:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Ensuring every Indian family has access to pure, healthy, and mineral-rich drinking water</li>
+                        <li>Providing affordable water solutions with no hidden costs or poor service</li>
+                        <li>Creating a transparent service ecosystem, where customers don't have to worry about fake filters, unreliable technicians, or unresponsive support</li>
+                        <li>Building long-term relationships based on trust, performance, and support</li>
+                        <li>Supporting eco-friendly purification by reducing bottled plastic waste through home RO usage</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">
+                        We believe that clean water is not a luxury, it's a basic human right. Our mission is to make sure no home is left behind when it comes to access to safe drinking water.
+                    </p>
+                </div>
+
+                <!-- Meet the Founders -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Meet the Founders</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Aman Kumar</h3>
+                            <p class="text-gray-700">
+                                Aman is a passionate entrepreneur with deep experience in RO technology and service operations. He leads the company's technical and product innovation, ensuring that customers get only genuine, reliable, and modern purification systems.
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Rupesh</h3>
+                            <p class="text-gray-700">
+                                Rupesh brings a strong background in customer relations and business strategy. He is responsible for managing client satisfaction, service optimization, and marketing, ensuring every customer has a smooth, professional experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What We Do -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">What We Do</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Installation (all brands and models)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Repair & Maintenance (24×7 available)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>AMC (Annual Maintenance Contracts)</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Subscription Plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Sale of RO Systems, Filters, and Membranes</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Live WhatsApp Support for Orders & Issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Why Choose Us -->
+                <div class="bg-blue-600 text-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Why Choose Indian RO System</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-award text-3xl mb-2"></i>
+                            <p>10+ years of combined experience</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-users text-3xl mb-2"></i>
+                            <p>Trusted by 3000+ customers in NCR</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-tools text-3xl mb-2"></i>
+                            <p>Fast & verified service technicians</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-heart text-3xl mb-2"></i>
+                            <p>Friendly and respectful customer service</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-12">
+                    <h2 class="text-2xl font-bold mb-4">Need help choosing the best RO system for your home or office?</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+                        </a>
+                        <a href="tel:8929472598" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Call 8929472598
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS PAGE -->
+        <section id="testimonials" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Customer Testimonials</h1>
+                    <p class="text-gray-600">What our satisfied customers say about us</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonials-grid">
+                    <!-- Testimonials will be loaded dynamically -->
+                </div>
+                
+                <!-- Add Testimonial Form -->
+                <div class="mt-16 bg-blue-50 p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold text-center mb-6">Share Your Experience</h2>
+                    <form id="testimonial-form" class="max-w-md mx-auto">
+                        <div class="mb-4">
+                            <input type="text" id="testimonial-name" placeholder="Your Name" class="w-full p-3 border rounded-lg" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" id="testimonial-location" placeholder="Your Location" class="w-full p-3 border rounded-lg" required>
+                        </div>
+                        <div class="mb-4">
+                            <select id="testimonial-service" class="w-full p-3 border rounded-lg" required>
+                                <option value="">Select Service Used</option>
+                                <option value="Installation">RO Installation</option>
+                                <option value="AMC">AMC Service</option>
+                                <option value="Repair">RO Repair</option>
+                                <option value="Purchase">RO Purchase</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <select id="testimonial-rating" class="w-full p-3 border rounded-lg" required>
+                                <option value="">Rating</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <textarea id="testimonial-text" placeholder="Your Review" class="w-full p-3 border rounded-lg h-24" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Submit Review</button>
+                    </form>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-12">
+                    <h2 class="text-2xl font-bold mb-4">Thousands trust Indian RO System for clean water. Join our happy customer family today!</h2>
+                    <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>Chat Now on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ PAGE -->
+        <section id="faq" class="page-section py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+                    <p class="text-gray-600">Find answers to common questions about our RO services</p>
+                </div>
+                
+                <!-- Search FAQ -->
+                <div class="mb-8">
+                    <input type="text" id="faq-search" placeholder="Search questions..." class="w-full p-4 border rounded-lg text-lg">
+                </div>
+
+                <div class="space-y-4" id="faq-list">
+                    <!-- FAQ items will be loaded dynamically -->
+                </div>
+
+                <!-- Still have questions -->
+                <div class="mt-12 text-center bg-white p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Still have questions? Don't worry —</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Chat with our water expert
+                        </a>
+                        <a href="tel:8929472598" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Call us at 8929472598
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+                    <p class="text-gray-600">Get in touch for any RO service or inquiry</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Get In Touch</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Address</h3>
+                                    <p class="text-gray-600">Sector 31, Noida, Uttar Pradesh – 201301</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-2xl text-blue-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Phone</h3>
+                                    <a href="tel:8929472598" class="text-blue-600 hover:underline">+91 8929472598</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp text-2xl text-green-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">WhatsApp</h3>
+                                    <a href="https://wa.me/918929472598" class="text-green-600 hover:underline">Chat Now</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-2xl text-red-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Email</h3>
+                                    <a href="mailto:indianrosystem1@gmail.com" class="text-red-600 hover:underline">indianrosystem1@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow">
+                        <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <input type="text" id="contact-name" placeholder="Your Name" class="w-full p-3 border rounded-lg" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="tel" id="contact-mobile" placeholder="Mobile Number" class="w-full p-3 border rounded-lg" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" id="contact-email" placeholder="Email (Optional)" class="w-full p-3 border rounded-lg">
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="contact-message" placeholder="Your Message" class="w-full p-3 border rounded-lg h-32" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CTA Banner -->
+                <div class="mt-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg text-center">
+                    <h2 class="text-2xl font-bold mb-4">Need urgent installation or repair?</h2>
+                    <p class="mb-6">Call or WhatsApp us now for immediate assistance!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:8929472598" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                        <a href="https://wa.me/918929472598" class="bg-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-600">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Find Us</h2>
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2615922864655!2d77.37599111455!3d28.583621282431895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5e1f8ca2b47%3A0x3b7c2ff4c00e0c9b!2sSector%2031%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1625654321098!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN PANEL -->
+        <section id="admin" class="page-section">
+            <!-- Admin Login -->
+            <div id="admin-login" class="min-h-screen flex items-center justify-center bg-gray-50">
+                <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold text-center mb-6">Admin Login</h2>
+                    <form id="admin-login-form">
+                        <div class="mb-4">
+                            <input type="text" id="admin-username" placeholder="Username" class="w-full p-3 border rounded-lg" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" id="admin-password" placeholder="Password" class="w-full p-3 border rounded-lg" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" id="admin-captcha-input" placeholder="Enter CAPTCHA" class="w-full p-3 border rounded-lg" required>
+                            <div id="admin-captcha" class="mt-2 p-2 bg-gray-100 text-center font-mono text-lg tracking-wider"></div>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard -->
+            <div id="admin-dashboard" class="hidden min-h-screen bg-gray-100">
+                <!-- Admin Header -->
+                <header class="bg-blue-800 text-white p-4">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-xl font-bold">Indian RO System - Admin Panel</h1>
+                        <button id="admin-logout" class="bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                        </button>
+                    </div>
+                </header>
+
+                <div class="flex">
+                    <!-- Admin Sidebar -->
+                    <aside class="admin-sidebar bg-white w-64 min-h-screen shadow-lg">
+                        <nav class="p-4">
+                            <ul class="space-y-2">
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="dashboard"><i class="fas fa-home mr-3"></i>Dashboard</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="products-admin"><i class="fas fa-box mr-3"></i>Products</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="services-admin"><i class="fas fa-cogs mr-3"></i>Services</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="gallery-admin"><i class="fas fa-images mr-3"></i>Gallery</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="testimonials-admin"><i class="fas fa-star mr-3"></i>Testimonials</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="faq-admin"><i class="fas fa-question mr-3"></i>FAQ</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="contacts-admin"><i class="fas fa-envelope mr-3"></i>Contact Messages</a></li>
+                                <li><a href="#" class="admin-menu-item flex items-center p-3 rounded hover:bg-blue-50" data-section="settings-admin"><i class="fas fa-cog mr-3"></i>Settings</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <!-- Admin Content -->
+                    <main class="flex-1 p-6">
+                        <!-- Dashboard -->
+                        <div id="admin-dashboard-section" class="admin-section">
+                            <h2 class="text-3xl font-bold mb-6">Dashboard</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold mb-2">Total Products</h3>
+                                    <p class="text-3xl font-bold text-blue-600" id="total-products">0</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold mb-2">Total Services</h3>
+                                    <p class="text-3xl font-bold text-green-600" id="total-services">0</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold mb-2">Total Testimonials</h3>
+                                    <p class="text-3xl font-bold text-purple-600" id="total-testimonials">0</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold mb-2">Contact Messages</h3>
+                                    <p class="text-3xl font-bold text-red-600" id="total-messages">0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products Admin -->
+                        <div id="admin-products-admin-section" class="admin-section hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-3xl font-bold">Manage Products</h2>
+                                <button id="add-product-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <i class="fas fa-plus mr-2"></i>Add Product
+                                </button>
+                            </div>
+                            <div class="bg-white rounded-lg shadow">
+                                <div class="p-6">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left p-2">Name</th>
+                                                <th class="text-left p-2">MRP</th>
+                                                <th class="text-left p-2">Tank Color</th>
+                                                <th class="text-left p-2">Features</th>
+                                                <th class="text-left p-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="products-table">
+                                            <!-- Products will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services Admin -->
+                        <div id="admin-services-admin-section" class="admin-section hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-3xl font-bold">Manage Services</h2>
+                                <button id="add-service-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <i class="fas fa-plus mr-2"></i>Add Service
+                                </button>
+                            </div>
+                            <div class="bg-white rounded-lg shadow">
+                                <div class="p-6">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left p-2">Icon</th>
+                                                <th class="text-left p-2">Title</th>
+                                                <th class="text-left p-2">Price</th>
+                                                <th class="text-left p-2">Description</th>
+                                                <th class="text-left p-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="services-table">
+                                            <!-- Services will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Admin -->
+                        <div id="admin-gallery-admin-section" class="admin-section hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-3xl font-bold">Manage Gallery</h2>
+                                <button id="add-gallery-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <i class="fas fa-plus mr-2"></i>Add Image
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-admin-grid">
+                                <!-- Gallery items will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Testimonials Admin -->
+                        <div id="admin-testimonials-admin-section" class="admin-section hidden">
+                            <h2 class="text-3xl font-bold mb-6">Manage Testimonials</h2>
+                            <div class="bg-white rounded-lg shadow">
+                                <div class="p-6">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left p-2">Name</th>
+                                                <th class="text-left p-2">Rating</th>
+                                                <th class="text-left p-2">Location</th>
+                                                <th class="text-left p-2">Service</th>
+                                                <th class="text-left p-2">Review</th>
+                                                <th class="text-left p-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="testimonials-admin-table">
+                                            <!-- Testimonials will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Admin -->
+                        <div id="admin-faq-admin-section" class="admin-section hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-3xl font-bold">Manage FAQ</h2>
+                                <button id="add-faq-btn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <i class="fas fa-plus mr-2"></i>Add FAQ
+                                </button>
+                            </div>
+                            <div class="bg-white rounded-lg shadow">
+                                <div class="p-6">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left p-2">Question</th>
+                                                <th class="text-left p-2">Answer</th>
+                                                <th class="text-left p-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="faq-admin-table">
+                                            <!-- FAQ items will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Messages Admin -->
+                        <div id="admin-contacts-admin-section" class="admin-section hidden">
+                            <h2 class="text-3xl font-bold mb-6">Contact Messages</h2>
+                            <div class="bg-white rounded-lg shadow">
+                                <div class="p-6">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left p-2">Date</th>
+                                                <th class="text-left p-2">Name</th>
+                                                <th class="text-left p-2">Mobile</th>
+                                                <th class="text-left p-2">Email</th>
+                                                <th class="text-left p-2">Message</th>
+                                                <th class="text-left p-2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="contacts-admin-table">
+                                            <!-- Contact messages will be loaded here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Settings Admin -->
+                        <div id="admin-settings-admin-section" class="admin-section hidden">
+                            <h2 class="text-3xl font-bold mb-6">Settings</h2>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                                    <form id="settings-form">
+                                        <div class="mb-4">
+                                            <label class="block text-sm font-bold mb-2">Phone Number</label>
+                                            <input type="tel" id="settings-phone" value="8929472598" class="w-full p-3 border rounded-lg">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block text-sm font-bold mb-2">WhatsApp Number</label>
+                                            <input type="tel" id="settings-whatsapp" value="918929472598" class="w-full p-3 border rounded-lg">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block text-sm font-bold mb-2">Email</label>
+                                            <input type="email" id="settings-email" value="indianrosystem1@gmail.com" class="w-full p-3 border rounded-lg">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block text-sm font-bold mb-2">Address</label>
+                                            <textarea id="settings-address" class="w-full p-3 border rounded-lg h-24">Sector 31, Noida, Uttar Pradesh – 201301</textarea>
+                                        </div>
+                                        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Settings</button>
+                                    </form>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow">
+                                    <h3 class="text-xl font-bold mb-4">Data Management</h3>
+                                    <div class="space-y-4">
+                                        <button id="backup-data" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700">
+                                            <i class="fas fa-download mr-2"></i>Backup Data
+                                        </button>
+                                        <button id="restore-data" class="w-full bg-yellow-600 text-white p-3 rounded hover:bg-yellow-700">
+                                            <i class="fas fa-upload mr-2"></i>Restore Data
+                                        </button>
+                                        <button id="clear-data" class="w-full bg-red-600 text-white p-3 rounded hover:bg-red-700">
+                                            <i class="fas fa-trash mr-2"></i>Clear All Data
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <!-- Product Modal -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold mb-4" id="product-modal-title">Add Product</h3>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Product Name</label>
+                    <input type="text" id="product-name" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">MRP (₹)</label>
+                    <input type="number" id="product-mrp" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Tank Color</label>
+                    <select id="product-tank" class="w-full p-3 border rounded-lg" required>
+                        <option value="Blue">Blue</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Stainless Steel">Stainless Steel</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Features</label>
+                    <textarea id="product-features" class="w-full p-3 border rounded-lg h-24" required></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Save</button>
+                    <button type="button" class="flex-1 bg-gray-600 text-white p-3 rounded hover:bg-gray-700" onclick="closeModal('product-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div id="service-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold mb-4" id="service-modal-title">Add Service</h3>
+            <form id="service-form">
+                <input type="hidden" id="service-id">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Icon (Font Awesome class)</label>
+                    <input type="text" id="service-icon" placeholder="fas fa-tools" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Title</label>
+                    <input type="text" id="service-title" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Price</label>
+                    <input type="text" id="service-price" placeholder="₹499" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Description</label>
+                    <textarea id="service-description" class="w-full p-3 border rounded-lg h-24" required></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Save</button>
+                    <button type="button" class="flex-1 bg-gray-600 text-white p-3 rounded hover:bg-gray-700" onclick="closeModal('service-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold mb-4" id="faq-modal-title">Add FAQ</h3>
+            <form id="faq-form">
+                <input type="hidden" id="faq-id">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Question</label>
+                    <textarea id="faq-question" class="w-full p-3 border rounded-lg h-24" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Answer</label>
+                    <textarea id="faq-answer" class="w-full p-3 border rounded-lg h-32" required></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Save</button>
+                    <button type="button" class="flex-1 bg-gray-600 text-white p-3 rounded hover:bg-gray-700" onclick="closeModal('faq-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4">
+            <h3 class="text-xl font-bold mb-4">Add Gallery Image</h3>
+            <form id="gallery-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Image URL</label>
+                    <input type="url" id="gallery-url" placeholder="https://example.com/image.jpg" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Caption</label>
+                    <input type="text" id="gallery-caption" class="w-full p-3 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold mb-2">Category</label>
+                    <select id="gallery-category" class="w-full p-3 border rounded-lg" required>
+                        <option value="installations">Installations</option>
+                        <option value="technicians">Technicians</option>
+                        <option value="products">Products</option>
+                        <option value="customers">Happy Customers</option>
+                    </select>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Add Image</button>
+                    <button type="button" class="flex-1 bg-gray-600 text-white p-3 rounded hover:bg-gray-700" onclick="closeModal('gallery-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+        <div class="relative max-w-4xl max-h-full">
+            <img id="lightbox-img" class="max-w-full max-h-full object-contain">
+            <button class="absolute top-4 right-4 text-white text-2xl" onclick="closeLightbox()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize data storage
+        function initializeData() {
+            if (!localStorage.getItem('products')) {
+                localStorage.setItem('products', JSON.stringify([
+                    {id: 1, name: 'Model A1', mrp: 7500, tank: 'Blue', features: 'Basic domestic RO system'},
+                    {id: 2, name: 'Model A2 with LED', mrp: 8500, tank: 'Blue', features: 'LED display panel'},
+                    {id: 3, name: 'Model A3 with LED', mrp: 9500, tank: 'Blue', features: 'LED, modern build'},
+                    {id: 4, name: 'Model K4 with Alkaline', mrp: 9500, tank: 'White', features: 'Alkaline purification'},
+                    {id: 5, name: 'Model K5/6 with UV', mrp: 10500, tank: 'White', features: 'UV sterilization included'},
+                    {id: 6, name: 'Model K7 with Post Carbon', mrp: 9500, tank: 'White', features: 'Post carbon filter for taste improvement'},
+                    {id: 7, name: 'Model K8 Full Black Body', mrp: 10500, tank: 'Black', features: 'Stylish full-black design'},
+                    {id: 8, name: 'Model K9 Big Storage', mrp: 13500, tank: 'White', features: 'High-capacity storage'},
+                    {id: 9, name: 'Model K10', mrp: 8500, tank: 'White', features: 'Entry-level model'},
+                    {id: 10, name: 'Model A1 Pro with LED', mrp: 8500, tank: 'Blue', features: 'LED + premium look'},
+                    {id: 11, name: 'Model U11 Copper', mrp: 15500, tank: 'Stainless Steel', features: 'Copper-enhanced water purifier'},
+                    {id: 12, name: 'Model U12 (Without Stand)', mrp: 15500, tank: 'Stainless Steel', features: 'Compact design'},
+                    {id: 13, name: 'Model U13', mrp: 15500, tank: 'Stainless Steel', features: 'Premium SS body'},
+                    {id: 14, name: 'Model P14 Purifair', mrp: 7500, tank: 'None', features: 'Tankless model for continuous flow'},
+                    {id: 15, name: 'Model U12 Pro White', mrp: 15500, tank: 'Stainless Steel', features: 'Pro version with high-end purification'},
+                    {id: 16, name: 'Model A1 Pro+', mrp: 9500, tank: 'Black', features: 'LED + Alkaline + Stylish'},
+                    {id: 17, name: 'Model K11 Slim', mrp: 10500, tank: 'Black', features: 'Slim body for modular kitchens'}
+                ]));
+            }
+
+            if (!localStorage.getItem('services')) {
+                localStorage.setItem('services', JSON.stringify([
+                    {id: 1, icon: 'fas fa-tools', title: 'RO Installation', price: '₹499', description: 'Professional installation for all RO brands. Includes fitting, demo, and full system setup. Available for homes, offices, and shops.'},
+                    {id: 2, icon: 'fas fa-calendar-check', title: 'RO AMC (Annual Maintenance Contract)', price: 'from ₹1499/year', description: 'Year-round service care including 3 technician visits, filter replacement, leak checks, and system optimization. Choose Basic, Standard, or Premium AMC Plans.'},
+                    {id: 3, icon: 'fas fa-wrench', title: 'RO Repair / Technician Visit', price: '₹249 per visit', description: 'Fix any RO issue: low water flow, unusual noise, leakage, or non-working motor. Fast response and expert technicians available 7 days a week.'},
+                    {id: 4, icon: 'fas fa-sync-alt', title: 'RO Subscription Plans', price: 'from ₹299/month', description: 'Enjoy hassle-free RO experience with monthly/quarterly plans covering AMC, filters, emergency visits, and priority support. Flexible and affordable.'},
+                    {id: 5, icon: 'fas fa-shopping-cart', title: 'RO Filters & Parts Sale', price: 'from ₹199', description: 'We sell and install 100% genuine RO filters, membranes, UV/UF kits, and pumps compatible with all brands (Kent, Aquaguard, Pureit, etc.).'}
+                ]));
+            }
+
+            if (!localStorage.getItem('testimonials')) {
+                localStorage.setItem('testimonials', JSON.stringify([
+                    {id: 1, name: 'Rajesh Singh', rating: 5, location: 'Sector 62, Noida', service: 'New RO Installation', text: 'Very professional service! My RO installation was done in 30 minutes and the technician explained everything clearly. Highly recommended!'},
+                    {id: 2, name: 'Anjali Verma', rating: 5, location: 'Indirapuram, Ghaziabad', service: 'AMC & Filter Change', text: 'Indian RO System is genuinely the best. Their AMC service is smooth and they use only original parts. Thanks Aman bhaiya!'},
+                    {id: 3, name: 'Rohit Khanna', rating: 4, location: 'East Delhi', service: 'RO Repair', text: 'Good pricing, fast delivery, and polite staff. Minor delay in arrival but service was excellent.'},
+                    {id: 4, name: 'Sneha Tripathi', rating: 5, location: 'Noida Extension', service: 'RO Purchase + Installation', text: 'I ordered the Model K9 with big storage. Got it delivered and installed the same day. Super happy with the service.'},
+                    {id: 5, name: 'Imran Sheikh', rating: 5, location: 'Vasundhara, Delhi NCR', service: 'Emergency Repair', text: 'After facing issues with local vendors, I tried Indian RO System. Best decision! They even helped me on WhatsApp at 10 PM.'}
+                ]));
+            }
+
+            if (!localStorage.getItem('faq')) {
+                localStorage.setItem('faq', JSON.stringify([
+                    {id: 1, question: 'Which RO model is best for a family of 4–6 members?', answer: 'For families of 4–6, we recommend models like Model A3 with LED, Model K8 (Black body), or Model K9 (Big storage). These offer 6–12 L storage, LED indicators, and mineral balancing – ideal for daily usage.'},
+                    {id: 2, question: 'Do you provide installation for the RO machine?', answer: 'Yes, we provide same-day installation across Noida, Ghaziabad, and Delhi NCR. Our verified technicians handle everything from pipe fitting to testing. Installation is often free with purchase.'},
+                    {id: 3, question: 'What is the cost of RO repair or service?', answer: 'Basic service starts from ₹299, while repairs may vary based on issue and model. You\'ll receive transparent pricing before work begins. No hidden charges.'},
+                    {id: 4, question: 'What is an AMC and why do I need it?', answer: 'AMC stands for Annual Maintenance Contract. It includes regular servicing, filter replacement, and breakdown repair. It helps your RO perform well and increases its life. Our AMC plans start at ₹999/year.'},
+                    {id: 5, question: 'Do you use original filters and parts?', answer: 'Yes, we use 100% genuine and brand-compatible filters, membranes, UV/UF kits, and spare parts. All products come with warranty and technician verification.'},
+                    {id: 6, question: 'Can I get support on WhatsApp?', answer: 'Absolutely! Just click here to WhatsApp us or send a message to +91 8929472598 for installation, service requests, or order inquiries.'},
+                    {id: 7, question: 'Do you offer return or replacement?', answer: 'Yes. If the product is defective or the wrong model is delivered, we offer free replacement within 3 days of delivery. Customer satisfaction is our top priority.'},
+                    {id: 8, question: 'Which areas do you serve?', answer: 'We provide service in Noida, Greater Noida, Delhi, Ghaziabad, Vasundhara, Indirapuram, East Delhi, and nearby sectors.'},
+                    {id: 9, question: 'Can I schedule service for a specific time?', answer: 'Yes, you can choose your preferred service time while booking. Our technicians arrive within your selected window and confirm on WhatsApp 30 mins prior.'},
+                    {id: 10, question: 'Do you offer monthly water plans or RO on rent?', answer: 'Yes. We offer RO Subscription Plans for home & commercial use — starting at ₹499/month, including machine + service. Contact us on WhatsApp to know available models.'}
+                ]));
+            }
+
+            if (!localStorage.getItem('gallery')) {
+                localStorage.setItem('gallery', JSON.stringify([
+                    {id: 1, url: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400', caption: 'Model A3 Installed in Noida', category: 'installations'},
+                    {id: 2, url: 'https://images.unsplash.com/photo-1581093458791-9d42e72b2e14?w=400', caption: 'Professional Installation Service', category: 'technicians'},
+                    {id: 3, url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400', caption: 'Model K9 Big Storage', category: 'products'},
+                    {id: 4, url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400', caption: 'Happy Customer Family', category: 'customers'},
+                    {id: 5, url: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400', caption: 'Office Installation in Ghaziabad', category: 'installations'},
+                    {id: 6, url: 'https://images.unsplash.com/photo-1558618047-89d5dff7b3c5?w=400', caption: 'Technician at Work', category: 'technicians'}
+                ]));
+            }
+
+            if (!localStorage.getItem('contacts')) {
+                localStorage.setItem('contacts', JSON.stringify([]));
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeData();
+            loadProducts();
+            loadServices();
+            loadTestimonials();
+            loadFAQ();
+            loadGallery();
+            generateCaptcha();
+        });
+
+        // Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Hide mobile menu
+            document.querySelector('.mobile-menu').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Load Products
+        function loadProducts() {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productCard = `
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                            <i class="fas fa-tint text-6xl text-blue-600"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">${product.name}</h3>
+                            <div class="mb-2">
+                                <span class="text-2xl font-bold text-green-600">₹${product.mrp.toLocaleString()}</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="text-sm text-gray-600">Tank: ${product.tank}</span>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-700 text-sm">${product.features}</p>
+                            </div>
+                            <a href="https://wa.me/918929472598?text=I%20want%20to%20buy%20${encodeURIComponent(product.name)}" 
+                               class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg inline-flex items-center justify-center transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>Buy Now on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += productCard;
+            });
+        }
+
+        // Load Services
+        function loadServices() {
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const grid = document.getElementById('services-grid');
+            grid.innerHTML = '';
+            
+            services.forEach(service => {
+                const serviceCard = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="${service.icon} text-3xl text-blue-600 mr-4"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-2">${service.title}</h3>
+                                <div class="text-2xl font-bold text-green-600 mb-3">${service.price}</div>
+                                <p class="text-gray-700 mb-4">${service.description}</p>
+                                <div class="flex gap-3">
+                                    <a href="https://wa.me/918929472598?text=I%20need%20${encodeURIComponent(service.title)}" 
+                                       class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                                        <i class="fab fa-whatsapp mr-2"></i>Book Now
+                                    </a>
+                                    <a href="tel:8929472598" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                                        <i class="fas fa-phone mr-2"></i>Call
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += serviceCard;
+            });
+        }
+
+        // Load Testimonials
+        function loadTestimonials() {
+            const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+            const grid = document.getElementById('testimonials-grid');
+            grid.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+                const testimonialCard = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">${testimonial.name}</h3>
+                                <p class="text-sm text-gray-600">${testimonial.location}</p>
+                            </div>
+                        </div>
+                        <div class="text-yellow-500 text-lg mb-2">${stars}</div>
+                        <p class="text-gray-700 mb-3">"${testimonial.text}"</p>
+                        <div class="text-sm text-blue-600 font-semibold">Service: ${testimonial.service}</div>
+                    </div>
+                `;
+                grid.innerHTML += testimonialCard;
+            });
+        }
+
+        // Load FAQ
+        function loadFAQ() {
+            const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+            const list = document.getElementById('faq-list');
+            list.innerHTML = '';
+            
+            faqs.forEach(faq => {
+                const faqItem = `
+                    <div class="bg-white rounded-lg shadow">
+                        <button class="faq-question w-full text-left p-4 font-semibold hover:bg-gray-50 focus:outline-none" 
+                                onclick="toggleFAQ(${faq.id})">
+                            <div class="flex justify-between items-center">
+                                <span>${faq.question}</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="faq-icon-${faq.id}"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content p-4 pt-0" id="faq-content-${faq.id}">
+                            <p class="text-gray-700">${faq.answer}</p>
+                        </div>
+                    </div>
+                `;
+                list.innerHTML += faqItem;
+            });
+        }
+
+        // Load Gallery  
+        function loadGallery() {
+            const gallery = JSON.parse(localStorage.getItem('gallery') || '[]');
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+            
+            gallery.forEach(item => {
+                const galleryItem = `
+                    <div class="gallery-item" data-category="${item.category}">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="${item.url}" alt="${item.caption}" 
+                                 class="w-full h-48 object-cover gallery-img cursor-pointer"
+                                 onclick="openLightbox('${item.url}')">
+                            <div class="p-4">
+                                <p class="text-sm font-semibold">${item.caption}</p>
+                                <span class="text-xs text-gray-500 capitalize">${item.category}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += galleryItem;
+            });
+        }
+
+        // Gallery Filter
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('gallery-filter')) {
+                // Update active filter button
+                document.querySelectorAll('.gallery-filter').forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                e.target.classList.remove('bg-gray-200', 'text-gray-700');
+                e.target.classList.add('bg-blue-600', 'text-white');
+                
+                // Filter gallery items
+                const filter = e.target.dataset.filter;
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // FAQ Search
+        document.getElementById('faq-search').addEventListener('input', function(e) {
+            const search = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('#faq-list > div');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.accordion-content p').textContent.toLowerCase();
+                
+                if (question.includes(search) || answer.includes(search)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Contact Form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('contact-name').value,
+                mobile: document.getElementById('contact-mobile').value,
+                email: document.getElementById('contact-email').value,
+                message: document.getElementById('contact-message').value,
+                date: new Date().toISOString()
+            };
+            
+            // Save to localStorage
+            const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+            contacts.push({...formData, id: Date.now()});
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+            
+            alert('Thank you! We\'ll contact you soon.');
+            this.reset();
+        });
+
+        // Testimonial Form
+        document.getElementById('testimonial-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const testimonialData = {
+                id: Date.now(),
+                name: document.getElementById('testimonial-name').value,
+                location: document.getElementById('testimonial-location').value,
+                service: document.getElementById('testimonial-service').value,
+                rating: parseInt(document.getElementById('testimonial-rating').value),
+                text: document.getElementById('testimonial-text').value
+            };
+            
+            // Save to localStorage
+            const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+            testimonials.push(testimonialData);
+            localStorage.setItem('testimonials', JSON.stringify(testimonials));
+            
+            alert('Thank you for your review!');
+            this.reset();
+            loadTestimonials();
+        });
+
+        // Admin Functions
+        let currentCaptcha = '';
+
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            currentCaptcha = '';
+            for (let i = 0; i < 6; i++) {
+                currentCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('admin-captcha').textContent = currentCaptcha;
+        }
+
+        // Admin Login
+        document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('admin-username').value;
+            const password = document.getElementById('admin-password').value;
+            const captcha = document.getElementById('admin-captcha-input').value;
+            
+            if (username === 'amansahu' && password === 'amankumar8929' && captcha === currentCaptcha) {
+                document.getElementById('admin-login').classList.add('hidden');
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                showPage('admin');
+                loadAdminDashboard();
+            } else {
+                alert('Invalid credentials or CAPTCHA!');
+                generateCaptcha();
+            }
+        });
+
+        // Admin Logout
+        document.getElementById('admin-logout').addEventListener('click', function() {
+            document.getElementById('admin-login').classList.remove('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+            document.getElementById('admin-login-form').reset();
+            generateCaptcha();
+            showPage('home');
+        });
+
+        // Admin Menu Navigation
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('admin-menu-item')) {
+                e.preventDefault();
+                const section = e.target.dataset.section;
+                
+                // Hide all admin sections
+                document.querySelectorAll('.admin-section').forEach(sec => {
+                    sec.classList.add('hidden');
+                });
+                
+                // Show selected section
+                document.getElementById(`admin-${section}-section`).classList.remove('hidden');
+                
+                // Update active menu item
+                document.querySelectorAll('.admin-menu-item').forEach(item => {
+                    item.classList.remove('bg-blue-100', 'text-blue-800');
+                });
+                e.target.classList.add('bg-blue-100', 'text-blue-800');
+                
+                // Load section-specific data
+                if (section === 'products-admin') loadAdminProducts();
+                if (section === 'services-admin') loadAdminServices();
+                if (section === 'testimonials-admin') loadAdminTestimonials();
+                if (section === 'faq-admin') loadAdminFAQ();
+                if (section === 'contacts-admin') loadAdminContacts();
+                if (section === 'gallery-admin') loadAdminGallery();
+            }
+        });
+
+        function loadAdminDashboard() {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+            const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+            
+            document.getElementById('total-products').textContent = products.length;
+            document.getElementById('total-services').textContent = services.length;
+            document.getElementById('total-testimonials').textContent = testimonials.length;
+            document.getElementById('total-messages').textContent = contacts.length;
+        }
+
+        function loadAdminProducts() {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const table = document.getElementById('products-table');
+            table.innerHTML = '';
+            
+            products.forEach(product => {
+                const row = `
+                    <tr class="border-b">
+                        <td class="p-2">${product.name}</td>
+                        <td class="p-2">₹${product.mrp.toLocaleString()}</td>
+                        <td class="p-2">${product.tank}</td>
+                        <td class="p-2">${product.features.substring(0, 50)}...</td>
+                        <td class="p-2">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded mr-2" onclick="editProduct(${product.id})">Edit</button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteProduct(${product.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function loadAdminServices() {
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const table = document.getElementById('services-table');
+            table.innerHTML = '';
+            
+            services.forEach(service => {
+                const row = `
+                    <tr class="border-b">
+                        <td class="p-2"><i class="${service.icon}"></i></td>
+                        <td class="p-2">${service.title}</td>
+                        <td class="p-2">${service.price}</td>
+                        <td class="p-2">${service.description.substring(0, 50)}...</td>
+                        <td class="p-2">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded mr-2" onclick="editService(${service.id})">Edit</button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteService(${service.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function loadAdminTestimonials() {
+            const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+            const table = document.getElementById('testimonials-admin-table');
+            table.innerHTML = '';
+            
+            testimonials.forEach(testimonial => {
+                const stars = '★'.repeat(testimonial.rating);
+                const row = `
+                    <tr class="border-b">
+                        <td class="p-2">${testimonial.name}</td>
+                        <td class="p-2">${stars}</td>
+                        <td class="p-2">${testimonial.location}</td>
+                        <td class="p-2">${testimonial.service}</td>
+                        <td class="p-2">${testimonial.text.substring(0, 50)}...</td>
+                        <td class="p-2">
+                            <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteTestimonial(${testimonial.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function loadAdminFAQ() {
+            const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+            const table = document.getElementById('faq-admin-table');
+            table.innerHTML = '';
+            
+            faqs.forEach(faq => {
+                const row = `
+                    <tr class="border-b">
+                        <td class="p-2">${faq.question.substring(0, 50)}...</td>
+                        <td class="p-2">${faq.answer.substring(0, 50)}...</td>
+                        <td class="p-2">
+                            <button class="bg-blue-500 text-white px-2 py-1 rounded mr-2" onclick="editFAQ(${faq.id})">Edit</button>
+                            <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteFAQ(${faq.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function loadAdminContacts() {
+            const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+            const table = document.getElementById('contacts-admin-table');
+            table.innerHTML = '';
+            
+            contacts.forEach(contact => {
+                const date = new Date(contact.date).toLocaleDateString();
+                const row = `
+                    <tr class="border-b">
+                        <td class="p-2">${date}</td>
+                        <td class="p-2">${contact.name}</td>
+                        <td class="p-2">${contact.mobile}</td>
+                        <td class="p-2">${contact.email || 'N/A'}</td>
+                        <td class="p-2">${contact.message.substring(0, 50)}...</td>
+                        <td class="p-2">
+                            <button class="bg-red-500 text-white px-2 py-1 rounded" onclick="deleteContact(${contact.id})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+        }
+
+        function loadAdminGallery() {
+            const gallery = JSON.parse(localStorage.getItem('gallery') || '[]');
+            const grid = document.getElementById('gallery-admin-grid');
+            grid.innerHTML = '';
+            
+            gallery.forEach(item => {
+                const galleryItem = `
+                    <div class="bg-white rounded-lg shadow overflow-hidden">
+                        <img src="${item.url}" alt="${item.caption}" class="w-full h-32 object-cover">
+                        <div class="p-4">
+                            <p class="text-sm font-semibold mb-2">${item.caption}</p>
+                            <span class="text-xs text-gray-500 capitalize mb-2 block">${item.category}</span>
+                            <button class="bg-red-500 text-white px-3 py-1 rounded text-sm" onclick="deleteGalleryItem(${item.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += galleryItem;
+            });
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Product CRUD
+        document.getElementById('add-product-btn').addEventListener('click', function() {
+            document.getElementById('product-modal-title').textContent = 'Add Product';
+            document.getElementById('product-form').reset();
+            document.getElementById('product-id').value = '';
+            openModal('product-modal');
+        });
+
+        document.getElementById('product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const id = document.getElementById('product-id').value;
+            
+            const productData = {
+                name: document.getElementById('product-name').value,
+                mrp: parseInt(document.getElementById('product-mrp').value),
+                tank: document.getElementById('product-tank').value,
+                features: document.getElementById('product-features').value
+            };
+            
+            if (id) {
+                // Edit existing product
+                const index = products.findIndex(p => p.id == id);
+                products[index] = {...productData, id: parseInt(id)};
+            } else {
+                // Add new product
+                products.push({...productData, id: Date.now()});
+            }
+            
+            localStorage.setItem('products', JSON.stringify(products));
+            closeModal('product-modal');
+            loadAdminProducts();
+            loadProducts();
+            loadAdminDashboard();
+        });
+
+        function editProduct(id) {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const product = products.find(p => p.id === id);
+            
+            document.getElementById('product-modal-title').textContent = 'Edit Product';
+            document.getElementById('product-id').value = product.id;
+            document.getElementById('product-name').value = product.name;
+            document.getElementById('product-mrp').value = product.mrp;
+            document.getElementById('product-tank').value = product.tank;
+            document.getElementById('product-features').value = product.features;
+            
+            openModal('product-modal');
+        }
+
+        function deleteProduct(id) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                const products = JSON.parse(localStorage.getItem('products') || '[]');
+                const filtered = products.filter(p => p.id !== id);
+                localStorage.setItem('products', JSON.stringify(filtered));
+                loadAdminProducts();
+                loadProducts();
+                loadAdminDashboard();
+            }
+        }
+
+        // Service CRUD
+        document.getElementById('add-service-btn').addEventListener('click', function() {
+            document.getElementById('service-modal-title').textContent = 'Add Service';
+            document.getElementById('service-form').reset();
+            document.getElementById('service-id').value = '';
+            openModal('service-modal');
+        });
+
+        document.getElementById('service-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const id = document.getElementById('service-id').value;
+            
+            const serviceData = {
+                icon: document.getElementById('service-icon').value,
+                title: document.getElementById('service-title').value,
+                price: document.getElementById('service-price').value,
+                description: document.getElementById('service-description').value
+            };
+            
+            if (id) {
+                // Edit existing service
+                const index = services.findIndex(s => s.id == id);
+                services[index] = {...serviceData, id: parseInt(id)};
+            } else {
+                // Add new service
+                services.push({...serviceData, id: Date.now()});
+            }
+            
+            localStorage.setItem('services', JSON.stringify(services));
+            closeModal('service-modal');
+            loadAdminServices();
+            loadServices();
+            loadAdminDashboard();
+        });
+
+        function editService(id) {
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const service = services.find(s => s.id === id);
+            
+            document.getElementById('service-modal-title').textContent = 'Edit Service';
+            document.getElementById('service-id').value = service.id;
+            document.getElementById('service-icon').value = service.icon;
+            document.getElementById('service-title').value = service.title;
+            document.getElementById('service-price').value = service.price;
+            document.getElementById('service-description').value = service.description;
+            
+            openModal('service-modal');
+        }
+
+        function deleteService(id) {
+            if (confirm('Are you sure you want to delete this service?')) {
+                const services = JSON.parse(localStorage.getItem('services') || '[]');
+                const filtered = services.filter(s => s.id !== id);
+                localStorage.setItem('services', JSON.stringify(filtered));
+                loadAdminServices();
+                loadServices();
+                loadAdminDashboard();
+            }
+        }
+
+        // FAQ CRUD
+        document.getElementById('add-faq-btn').addEventListener('click', function() {
+            document.getElementById('faq-modal-title').textContent = 'Add FAQ';
+            document.getElementById('faq-form').reset();
+            document.getElementById('faq-id').value = '';
+            openModal('faq-modal');
+        });
+
+        document.getElementById('faq-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+            const id = document.getElementById('faq-id').value;
+            
+            const faqData = {
+                question: document.getElementById('faq-question').value,
+                answer: document.getElementById('faq-answer').value
+            };
+            
+            if (id) {
+                // Edit existing FAQ
+                const index = faqs.findIndex(f => f.id == id);
+                faqs[index] = {...faqData, id: parseInt(id)};
+            } else {
+                // Add new FAQ
+                faqs.push({...faqData, id: Date.now()});
+            }
+            
+            localStorage.setItem('faq', JSON.stringify(faqs));
+            closeModal('faq-modal');
+            loadAdminFAQ();
+            loadFAQ();
+        });
+
+        function editFAQ(id) {
+            const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+            const faq = faqs.find(f => f.id === id);
+            
+            document.getElementById('faq-modal-title').textContent = 'Edit FAQ';
+            document.getElementById('faq-id').value = faq.id;
+            document.getElementById('faq-question').value = faq.question;
+            document.getElementById('faq-answer').value = faq.answer;
+            
+            openModal('faq-modal');
+        }
+
+        function deleteFAQ(id) {
+            if (confirm('Are you sure you want to delete this FAQ?')) {
+                const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+                const filtered = faqs.filter(f => f.id !== id);
+                localStorage.setItem('faq', JSON.stringify(filtered));
+                loadAdminFAQ();
+                loadFAQ();
+            }
+        }
+
+        // Gallery CRUD
+        document.getElementById('add-gallery-btn').addEventListener('click', function() {
+            openModal('gallery-modal');
+        });
+
+        document.getElementById('gallery-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const gallery = JSON.parse(localStorage.getItem('gallery') || '[]');
+            
+            const galleryData = {
+                id: Date.now(),
+                url: document.getElementById('gallery-url').value,
+                caption: document.getElementById('gallery-caption').value,
+                category: document.getElementById('gallery-category').value
+            };
+            
+            gallery.push(galleryData);
+            localStorage.setItem('gallery', JSON.stringify(gallery));
+            
+            closeModal('gallery-modal');
+            this.reset();
+            loadAdminGallery();
+            loadGallery();
+        });
+
+        function deleteGalleryItem(id) {
+            if (confirm('Are you sure you want to delete this image?')) {
+                const gallery = JSON.parse(localStorage.getItem('gallery') || '[]');
+                const filtered = gallery.filter(g => g.id !== id);
+                localStorage.setItem('gallery', JSON.stringify(filtered));
+                loadAdminGallery();
+                loadGallery();
+            }
+        }
+
+        // Delete Functions
+        function deleteTestimonial(id) {
+            if (confirm('Are you sure you want to delete this testimonial?')) {
+                const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+                const filtered = testimonials.filter(t => t.id !== id);
+                localStorage.setItem('testimonials', JSON.stringify(filtered));
+                loadAdminTestimonials();
+                loadTestimonials();
+                loadAdminDashboard();
+            }
+        }
+
+        function deleteContact(id) {
+            if (confirm('Are you sure you want to delete this contact message?')) {
+                const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+                const filtered = contacts.filter(c => c.id !== id);
+                localStorage.setItem('contacts', JSON.stringify(filtered));
+                loadAdminContacts();
+                loadAdminDashboard();
+            }
+        }
+
+        // Settings Form
+        document.getElementById('settings-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Settings saved successfully!');
+        });
+
+        // Data Management
+        document.getElementById('backup-data').addEventListener('click', function() {
+            const data = {
+                products: JSON.parse(localStorage.getItem('products') || '[]'),
+                services: JSON.parse(localStorage.getItem('services') || '[]'),
+                testimonials: JSON.parse(localStorage.getItem('testimonials') || '[]'),
+                faq: JSON.parse(localStorage.getItem('faq') || '[]'),
+                gallery: JSON.parse(localStorage.getItem('gallery') || '[]'),
+                contacts: JSON.parse(localStorage.getItem('contacts') || '[]')
+            };
+            
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'indian-ro-system-backup.json';
+            link.click();
+            
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('clear-data').addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear all data? This action cannot be undone!')) {
+                localStorage.clear();
+                initializeData();
+                location.reload();
+            }
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+                e.target.classList.add('hidden');
+            }
+        });
+
+        // Close lightbox on click outside
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Add admin page to navigation (hidden by default)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+                showPage('admin');
+            }
+        });
+    </script>
+</body>
+</html>
+
