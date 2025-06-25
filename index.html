@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian RO System - Taaza Paani Har Din Har Pal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .nav-link.active {
+            color: #1e40af !important;
+            border-bottom: 2px solid #1e40af;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .gallery-img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #3b82f6;
+        }
+        .benefit-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-left: 4px solid #3b82f6;
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin: 4px 0;
+            display: inline-block;
+        }
+        .logo-container {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="https://page1.genspark.site/v1/base64_upload/09ec0fe2af8264b474274ae04432f937" alt="Indian RO System Logo" class="h-12 w-auto mr-3">
+                        <div>
+                            <h1 class="text-2xl font-bold text-blue-800">Indian RO System</h1>
+                            <p class="text-xs text-gray-600">Taaza Paani Har Din Har Pal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2 active" onclick="showPage('home')">Home</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('products')">Products</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('services')">Services</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('gallery')">Gallery</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('about')">About</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('faq')">FAQ</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-800 px-3 py-2" onclick="showPage('contact')">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-btn text-gray-700 hover:text-blue-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('home')">Home</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('products')">Products</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('services')">Services</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('gallery')">Gallery</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('about')">About</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('faq')">FAQ</a>
+                <a href="#" class="nav-link block px-3 py-2 text-gray-700 hover:text-blue-800" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918929472598" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- Main Content -->
+    <main class="mt-16">
+        <!-- HOME PAGE -->
+        <section id="home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="hero-bg text-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Taaza Paani Har Din Har Pal</h1>
+                        <p class="text-xl md:text-2xl mb-8">Premium RO Water Purification Solutions in Delhi NCR</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>Book RO Service Now
+                            </a>
+                            <a href="tel:8929472598" class="bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Overview -->
+            <div class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Main Services</h2>
+                        <p class="text-gray-600">Professional RO solutions for homes and offices</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO Installation</h3>
+                            <p class="text-gray-600">Professional installation for all RO brands with complete setup and demo</p>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-calendar-check text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO AMC</h3>
+                            <p class="text-gray-600">Annual Maintenance Contracts with regular service visits and filter replacements</p>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <i class="fas fa-wrench text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">RO Repair</h3>
+                            <p class="text-gray-600">Quick repair service & expert technician visits for all issues</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="py-16 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Indian RO System?</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <i class="fas fa-shipping-fast text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Fast Service</h3>
+                            <p class="text-gray-600">Same day installation & repair</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-user-check text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Experienced Technicians</h3>
+                            <p class="text-gray-600">Skilled & verified professionals</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-rupee-sign text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Affordable Prices</h3>
+                            <p class="text-gray-600">Transparent pricing, no hidden costs</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-clock text-3xl text-blue-600 mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
+                            <p class="text-gray-600">Round the clock customer service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="py-16 bg-blue-800 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                        <a href="tel:8929472598" class="bg-white text-blue-800 p-4 rounded-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-phone text-2xl mb-2"></i>
+                            <div class="font-semibold">8929472598</div>
+                        </a>
+                        <a href="tel:7503649221" class="bg-white text-blue-800 p-4 rounded-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-phone text-2xl mb-2"></i>
+                            <div class="font-semibold">7503649221</div>
+                        </a>
+                        <a href="https://wa.me/918929472598" class="bg-green-500 p-4 rounded-lg hover:bg-green-600 transition duration-300">
+                            <i class="fab fa-whatsapp text-2xl mb-2"></i>
+                            <div class="font-semibold">WhatsApp</div>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=indianrosystem1@gmail.com" 
+   target="_blank"" class="bg-red-500 p-4 rounded-lg hover:bg-red-600 transition duration-300">
+                            <i class="fas fa-envelope text-2xl mb-2"></i>
+                            <div class="font-semibold">Gmail</div>
+                        </a>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <i class="fas fa-map-marker-alt text-2xl mb-2"></i>
+                            <div class="font-semibold">Sector 31, Noida</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS PAGE -->
+        <section id="products" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our RO Products</h1>
+                    <p class="text-gray-600">Premium water purifiers for every home and office</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES PAGE -->
+        <section id="services" class="page-section py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h1>
+                    <p class="text-gray-600">Complete RO solutions for all your water purification needs</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="services-grid">
+                    <!-- Services will be loaded dynamically -->
+                </div>
+                
+                <!-- Why Choose Us -->
+                <div class="mt-16 bg-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-bold text-center mb-8">Why Choose Indian RO System?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>24×7 Service Support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Experienced & Verified Technicians</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Fast Delivery & Installation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>100% Genuine Parts</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Affordable Pricing</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Service Coverage in Delhi NCR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY PAGE -->
+        <section id="gallery" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Gallery</h1>
+                    <p class="text-gray-600">See our work and installations</p>
+                </div>
+                
+                <!-- Gallery Filters -->
+                <div class="flex flex-wrap justify-center mb-8 gap-4">
+                    <button class="gallery-filter bg-blue-600 text-white px-4 py-2 rounded-lg" data-filter="all">All</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="installations">Installations</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="technicians">Technicians</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="products">Products</button>
+                    <button class="gallery-filter bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300" data-filter="customers">Happy Customers</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                    <!-- Gallery items will be loaded dynamically -->
+                </div>
+
+                <!-- CTA Section -->
+                <div class="mt-16 text-center bg-blue-50 p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Want to be featured on our gallery?</h2>
+                    <p class="mb-4">Share your Indian RO System installation photos on WhatsApp and get ₹100 cashback!</p>
+                    <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page-section py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">About Indian RO System</h1>
+                    <p class="text-gray-600">Your trusted partner for clean and pure water</p>
+                </div>
+
+                <!-- Who We Are -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">Who We Are</h2>
+                    <p class="text-gray-700 mb-4">
+                        Indian RO System is one of the most trusted and rapidly growing companies in the field of water purification solutions across Delhi NCR. Founded with the mission to deliver clean, safe, and affordable drinking water to every household and business, we offer a complete range of RO systems, repair services, AMC plans, and genuine spare parts.
+                    </p>
+                    <p class="text-gray-700">
+                        We are based in Sector 31, Noida, and serve customers across Delhi, Ghaziabad, Greater Noida, and surrounding areas. From installation to maintenance, our team ensures timely, transparent, and high-quality service.
+                    </p>
+                </div>
+
+                <!-- Our Mission -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+                    <p class="text-gray-700 mb-4">At Indian RO System, our mission goes beyond selling RO machines. We are committed to:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Ensuring every Indian family has access to pure, healthy, and mineral-rich drinking water</li>
+                        <li>Providing affordable water solutions with no hidden costs or poor service</li>
+                        <li>Creating a transparent service ecosystem, where customers don't have to worry about fake filters, unreliable technicians, or unresponsive support</li>
+                        <li>Building long-term relationships based on trust, performance, and support</li>
+                        <li>Supporting eco-friendly purification by reducing bottled plastic waste through home RO usage</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4">
+                        We believe that clean water is not a luxury, it's a basic human right. Our mission is to make sure no home is left behind when it comes to access to safe drinking water.
+                    </p>
+                </div>
+
+                <!-- Meet the Founders -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-6">Meet the Founders</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Aman Kumar</h3>
+                            <p class="text-gray-700">
+                                Aman Kumar is a visionary entrepreneur with a strong focus on AI, automation, and smart technology. He leads Indian RO System with a passion for solving real-world problems through innovative, tech-powered solutions. His expertise lies in blending user-centric design with scalable digital systems that deliver both impact and reliability.
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-user text-4xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Rupesh</h3>
+                            <p class="text-gray-700">
+                                Rupesh brings a strong background in customer relations and business strategy. He is responsible for managing client satisfaction, service optimization, and marketing, ensuring every customer has a smooth, professional experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What We Do -->
+                <div class="bg-white p-8 rounded-lg shadow mb-12">
+                    <h2 class="text-2xl font-bold mb-4">What We Do</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Installation (all brands and models)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Repair & Maintenance (24×7 available)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>AMC (Annual Maintenance Contracts)</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>RO Subscription Plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Sale of RO Systems, Filters, and Membranes</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Live WhatsApp Support for Orders & Issues</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Why Choose Us -->
+                <div class="bg-blue-600 text-white p-8 rounded-lg shadow">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Why Choose Indian RO System</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-award text-3xl mb-2"></i>
+                            <p>10+ years of combined experience</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-users text-3xl mb-2"></i>
+                            <p>Trusted by 3000+ customers in NCR</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-tools text-3xl mb-2"></i>
+                            <p>Fast & verified service technicians</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-heart text-3xl mb-2"></i>
+                            <p>Friendly and respectful customer service</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-12">
+                    <h2 class="text-2xl font-bold mb-4">Need help choosing the best RO system for your home or office?</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+                        </a>
+                        <a href="tel:8929472598" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Call 8929472598
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ PAGE -->
+        <section id="faq" class="page-section py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
+                    <p class="text-gray-600">Find answers to common questions about our RO services</p>
+                </div>
+                
+                <!-- Search FAQ -->
+                <div class="mb-8">
+                    <input type="text" id="faq-search" placeholder="Search questions..." class="w-full p-4 border rounded-lg text-lg">
+                </div>
+
+                <div class="space-y-4" id="faq-list">
+                    <!-- FAQ items will be loaded dynamically -->
+                </div>
+
+                <!-- Still have questions -->
+                <div class="mt-12 text-center bg-white p-8 rounded-lg">
+                    <h2 class="text-2xl font-bold mb-4">Still have questions? Don't worry —</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/918929472598" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Chat with our water expert
+                        </a>
+                        <a href="tel:8929472598" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg inline-flex items-center">
+                            <i class="fas fa-phone mr-2"></i>Call us at 8929472598
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page-section py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+                    <p class="text-gray-600">Get in touch for any RO service or inquiry</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6">Get In Touch</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Address</h3>
+                                    <p class="text-gray-600">Sector 31, Noida, Uttar Pradesh – 201301</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-2xl text-blue-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Phone</h3>
+                                    <a href="tel:8929472598" class="text-blue-600 hover:underline">+91 8929472598</a><br>
+                                    <a href="tel:7503649221" class="text-blue-600 hover:underline">+91 7503649221</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp text-2xl text-green-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">WhatsApp</h3>
+                                    <a href="https://wa.me/918929472598" class="text-green-600 hover:underline">Chat Now</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-2xl text-red-600 mr-4"></i>
+                                <div>
+                                    <h3 class="font-semibold">Email</h3>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=indianrosystem1@gmail.com" 
+   target="_blank" 
+   style="text-decoration:none; background-color:#007bff; color:white; padding:10px 20px; border-radius:6px; font-family:sans-serif; display:inline-block;">
+   📧 Contact Us on Gmail
+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow">
+                        <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <input type="text" id="contact-name" placeholder="Your Name" class="w-full p-3 border rounded-lg" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="tel" id="contact-mobile" placeholder="Mobile Number" class="w-full p-3 border rounded-lg" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" id="contact-email" placeholder="Email (Optional)" class="w-full p-3 border rounded-lg">
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="contact-message" placeholder="Your Message" class="w-full p-3 border rounded-lg h-32" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CTA Banner -->
+                <div class="mt-12 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg text-center">
+                    <h2 class="text-2xl font-bold mb-4">Need urgent installation or repair?</h2>
+                    <p class="mb-6">Call or WhatsApp us now for immediate assistance!</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:8929472598" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                        <a href="https://wa.me/918929472598" class="bg-green-500 px-6 py-3 rounded-lg font-semibold hover:bg-green-600">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6 text-center">Find Us</h2>
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.2615922864655!2d77.37599111455!3d28.583621282431895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5e1f8ca2b47%3A0x3b7c2ff4c00e0c9b!2sSector%2031%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1625654321098!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Indian RO System</h3>
+                    <p class="text-gray-300 mb-4">Taaza Paani Har Din Har Pal</p>
+                    <p class="text-gray-300">Your trusted partner for clean and pure water solutions in Delhi NCR.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('products')">Products</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('services')">Services</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('gallery')">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('contact')">Contact Us</a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-blue-400" onclick="showPage('faq')">FAQ</a></li>
+                        <li><a href="https://wa.me/918929472598" class="footer-link text-gray-300 hover:text-green-400">WhatsApp Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-blue-400"></i>
+                            <a href="tel:8929472598" class="text-gray-300 hover:text-blue-400">+91 8929472598</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-blue-400"></i>
+                            <a href="tel:7503649221" class="text-gray-300 hover:text-blue-400">+91 7503649221</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-green-400"></i>
+                            <a href="https://wa.me/918929472598" class="text-gray-300 hover:text-green-400">WhatsApp</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-red-400"></i>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=indianrosystem1@gmail.com" 
+   target="_blank">Email Us</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-400 mt-1"></i>
+                            <span class="text-gray-300">Sector 31, Noida, UP - 201301</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-300 text-sm">
+                        <p>&copy; 2024 Indian RO System. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="https://wa.me/918929472598" class="text-gray-300 hover:text-green-400 transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="tel:8929472598" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fas fa-phone text-xl"></i>
+                        </a>
+                        <a href="/cdn-cgi/l/email-protection#5d343339343c332f322e242e2938306c1d3a303c3431733e3230" class="text-gray-300 hover:text-red-400 transition duration-300">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
+        <div class="relative max-w-4xl max-h-full">
+            <img id="lightbox-img" class="max-w-full max-h-full object-contain">
+            <button class="absolute top-4 right-4 text-white text-2xl" onclick="closeLightbox()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Product images mapping
+        const productImages = {
+            'Model A1 Basic RO': 'https://s.alicdn.com/@sc04/kf/H0fc1f9bf6403425da57008c0f78086a4n.png',
+            'Model A2 with LED Display': 'https://image.made-in-china.com/202f0j00LwrVhieKfWoH/Hikins-New-Design-Home-RO-Water-Purifier-Machine-Reverse-Osmosis-System.webp',
+            'Model A3 Premium LED': 'https://image.made-in-china.com/2f0j00qmDVzvQWnHkZ/Hikins-Self-Cleaning-Quick-Reverse-Osmosis-System-Domestic-RO-Purifier.jpg',
+            'Model K4 Alkaline Plus': 'https://api.globy.com/public/market/64fec7432d1555007933cfc7/photos/64fec7432d1555007933cfd1/64fec7432d1555007933cfd1_lg.webp',
+            'Model K5/6 with UV Sterilization': 'https://m.media-amazon.com/images/I/51iGe9PgERL._UF894,1000_QL80_.jpg',
+            'Model K7 Post Carbon Enhanced': 'https://image.made-in-china.com/202f0j00hCjUBJKgwZok/Brand-New-Commodity-Small-Size-Household-RO-Water-Purifier-Machine.webp',
+            'Model K8 Full Black Premium': 'https://images.romegamart.com/media/product_image/Novex_Pro_Black_With_Copper_10_Liter_Domestic_RO_Water_Purifier_With_Advan_T3Wq29v.jpg',
+            'Model K9 Big Storage Capacity': 'https://m.media-amazon.com/images/I/71F5pTupUyL.jpg',
+            'Model K10 Compact Economy': 'https://image.made-in-china.com/365f3j00FCeVMLylMrbh/400gpd-600gpd-Metal-Stand-Domestic-RO-Water-Purifier-with-Pressure-Gauge.webp',
+            'Model A1 Pro with Advanced LED': 'https://image.made-in-china.com/202f0j00wCFUNfasLjqY/Volardda-Brand-RO-Reverse-Osmosis-System-Water-Purification-Filter.webp',
+            'Model U11 Copper Technology': 'https://himajal.com/wp-content/uploads/2020/06/sleek-front-new-logo-2.png',
+            'Model U12 Wall Mount (No Stand)': 'https://liwaspring.com/wp-content/uploads/2021/01/1.jpg',
+            'Model U13 Premium Stainless Steel': 'https://m.media-amazon.com/images/I/51EbMz8uDBL.jpg',
+            'Model P14 Purifair Tankless': 'https://rubytech.co.ke/wp-content/uploads/2023/03/DOMESTIC-RO-WATER-PURIFIER.png',
+            'Model U12 Pro White Edition': 'https://m.media-amazon.com/images/I/61L6CT18CkL.jpg',
+            'Model A1 Pro+ Triple Technology': 'https://m.media-amazon.com/images/I/61K-kJIs0JL._UF1000,1000_QL80_.jpg',
+            'Model K11 Slim Modular Kitchen Special': 'https://waterpurifierahmedabad.com/wp-content/uploads/2023/08/aqua-nine-ro.jpg'
+        };
+
+        // Service images mapping
+        const serviceImages = {
+            'RO Installation Service': 'https://www.callroth.com/wp-content/uploads/2023/04/technician-installing-reverse-osmosis-equipment.jpg',
+            'RO AMC (Annual Maintenance Contract)': 'https://www.aquasmartroservices.com/wp-content/uploads/2024/12/ro-repair-and-service-1-1.webp',
+            'RO Repair & Emergency Service': 'https://roservice.center/wp-content/uploads/2022/11/Reasons-to-Hire-Professionals-for-RO.jpg',
+            'RO Subscription Plans': 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/b3070e07-c932-4655-baee-2e1518ea472c',
+            'RO Filters & Genuine Parts Sale': 'https://m.media-amazon.com/images/I/51r3OUONhIL.jpg'
+        };
+
+        // Initialize data storage
+        function initializeData() {
+            if (!localStorage.getItem('products')) {
+                localStorage.setItem('products', JSON.stringify([
+                    {
+                        id: 1, 
+                        name: 'Model A1 Basic RO', 
+                        tank: 'Blue', 
+                        features: 'Perfect entry-level RO system for small families',
+                        benefits: [
+                            'Removes 99.9% impurities and harmful bacteria',
+                            'Compact design suitable for small kitchens',
+                            'Energy efficient with low power consumption',
+                            'Easy maintenance with simple filter replacement',
+                            'Ideal for TDS levels up to 2000 ppm',
+                            'Food-grade plastic construction',
+                            'Auto-start and auto-shut functions'
+                        ],
+                        specifications: {
+                            capacity: '8-10 Liters/Hour',
+                            storage: '10 Liters',
+                            stages: '6 Stage Purification',
+                            warranty: '1 Year Comprehensive'
+                        }
+                    },
+                    {
+                        id: 2, 
+                        name: 'Model A2 with LED Display', 
+                        tank: 'Blue', 
+                        features: 'Advanced RO with LED indicators for modern homes',
+                        benefits: [
+                            'LED display shows tank full, power on/off status',
+                            'Smart alerts for filter replacement',
+                            'High-quality borosilicate glass storage',
+                            '7-stage advanced purification process',
+                            'Copper + Zinc enrichment for health benefits',
+                            'Detachable storage tank for easy cleaning',
+                            'Child safety lock feature'
+                        ],
+                        specifications: {
+                            capacity: '12-15 Liters/Hour',
+                            storage: '12 Liters',
+                            stages: '7 Stage Purification',
+                            warranty: '2 Years Comprehensive'
+                        }
+                    },
+                    {
+                        id: 3, 
+                        name: 'Model A3 Premium LED', 
+                        tank: 'Blue', 
+                        features: 'Premium RO system with modern LED technology',
+                        benefits: [
+                            'Touch-sensitive LED control panel',
+                            'Digital TDS meter display',
+                            'Multi-stage purification with mineral retention',
+                            'Stainless steel UV chamber for extra safety',
+                            'Hot & cold water dispensing options',
+                            'Smart filter life indicator',
+                            'Premium food-grade materials throughout'
+                        ],
+                        specifications: {
+                            capacity: '15-18 Liters/Hour',
+                            storage: '15 Liters',
+                            stages: '8 Stage Purification',
+                            warranty: '3 Years Comprehensive'
+                        }
+                    },
+                    {
+                        id: 4, 
+                        name: 'Model K4 Alkaline Plus', 
+                        tank: 'White', 
+                        features: 'Health-focused RO with alkaline mineral enhancement',
+                        benefits: [
+                            'Alkaline technology maintains pH 7.5-8.5',
+                            'Mineral cartridge adds essential minerals',
+                            'Antioxidant properties for better health',
+                            'Detox function removes heavy metals',
+                            'Taste enhancer for better water flavor',
+                            'Anti-bacterial coating on all components',
+                            'Eco-friendly with minimal water wastage'
+                        ],
+                        specifications: {
+                            capacity: '12-15 Liters/Hour',
+                            storage: '12 Liters',
+                            stages: '9 Stage Purification + Alkaline',
+                            warranty: '2 Years + AMC'
+                        }
+                    },
+                    {
+                        id: 5, 
+                        name: 'Model K5/6 with UV Sterilization', 
+                        tank: 'White', 
+                        features: 'Dual protection with RO + UV technology',
+                        benefits: [
+                            'UV lamp kills 99.99% bacteria and viruses',
+                            'Dual purification: RO + UV sterilization',
+                            'Pre-filter extends RO membrane life',
+                            'Post-carbon improves taste and odor',
+                            'Auto-flush system prevents membrane clogging',
+                            'Low maintenance with long-lasting components',
+                            'Suitable for all water sources including tanker water'
+                        ],
+                        specifications: {
+                            capacity: '15-18 Liters/Hour',
+                            storage: '15 Liters',
+                            stages: '7 Stage RO + UV',
+                            warranty: '2 Years + UV Lamp'
+                        }
+                    },
+                    {
+                        id: 6, 
+                        name: 'Model K7 Post Carbon Enhanced', 
+                        tank: 'White', 
+                        features: 'Superior taste enhancement with post-carbon technology',
+                        benefits: [
+                            'Activated carbon removes chlorine and odor',
+                            'Enhanced taste and crystal-clear water',
+                            'Coconut shell carbon for natural filtration',
+                            'Removes residual chemicals and pesticides',
+                            'Improves water clarity and appearance',
+                            'Long-lasting carbon filter (12 months)',
+                            'Food-grade carbon safe for drinking'
+                        ],
+                        specifications: {
+                            capacity: '12-15 Liters/Hour',
+                            storage: '12 Liters',
+                            stages: '6 Stage + Post Carbon',
+                            warranty: '2 Years'
+                        }
+                    },
+                    {
+                        id: 7, 
+                        name: 'Model K8 Full Black Premium', 
+                        tank: 'Black', 
+                        features: 'Elegant black design for modern kitchen aesthetics',
+                        benefits: [
+                            'Sleek black finish matches modern kitchen decor',
+                            'Scratch-resistant and fingerprint-proof surface',
+                            'Premium build quality with ABS plastic',
+                            'Space-saving wall-mount design',
+                            'LED indicators blend seamlessly with design',
+                            'Easy-to-clean surfaces with anti-bacterial coating',
+                            'Contemporary styling with functional excellence'
+                        ],
+                        specifications: {
+                            capacity: '15-18 Liters/Hour',
+                            storage: '15 Liters',
+                            stages: '7 Stage Purification',
+                            warranty: '3 Years'
+                        }
+                    },
+                    {
+                        id: 8, 
+                        name: 'Model K9 Big Storage Capacity', 
+                        tank: 'White', 
+                        features: 'Large family RO system with maximum storage',
+                        benefits: [
+                            'Extra-large 18L storage for big families',
+                            'High-speed purification 20+ liters/hour',
+                            'Multiple dispensing taps for convenience',
+                            'Strong pump suitable for low water pressure',
+                            'Dual pre-filters for extended membrane life',
+                            'Commercial-grade components for durability',
+                            'Perfect for joint families and small offices'
+                        ],
+                        specifications: {
+                            capacity: '20-25 Liters/Hour',
+                            storage: '18 Liters',
+                            stages: '8 Stage Purification',
+                            warranty: '3 Years + Extended AMC'
+                        }
+                    },
+                    {
+                        id: 9, 
+                        name: 'Model K10 Compact Economy', 
+                        tank: 'White', 
+                        features: 'Budget-friendly RO without compromising quality',
+                        benefits: [
+                            'Affordable pricing with premium features',
+                            'Compact size perfect for small spaces',
+                            'Energy-efficient operation saves electricity',
+                            'Simple operation with minimal maintenance',
+                            'Quality components with reliable performance',
+                            'Suitable for apartment and studio living',
+                            'Easy installation with minimal plumbing'
+                        ],
+                        specifications: {
+                            capacity: '8-12 Liters/Hour',
+                            storage: '8 Liters',
+                            stages: '5 Stage Purification',
+                            warranty: '1 Year'
+                        }
+                    },
+                    {
+                        id: 10, 
+                        name: 'Model A1 Pro with Advanced LED', 
+                        tank: 'Blue', 
+                        features: 'Professional-grade RO with smart LED system',
+                        benefits: [
+                            'Advanced microprocessor-controlled system',
+                            'Smart LED alerts for all functions',
+                            'Auto-diagnostic system detects issues',
+                            'Remote monitoring capability via mobile app',
+                            'Filter life tracking with precise timing',
+                            'Energy-saving standby mode',
+                            'Professional installation and setup included'
+                        ],
+                        specifications: {
+                            capacity: '15-20 Liters/Hour',
+                            storage: '12 Liters',
+                            stages: '8 Stage Smart Purification',
+                            warranty: '3 Years + Smart Support'
+                        }
+                    },
+                    {
+                        id: 11, 
+                        name: 'Model U11 Copper Technology', 
+                        tank: 'Stainless Steel', 
+                        features: 'Revolutionary copper-infused purification technology',
+                        benefits: [
+                            'Copper infusion for antimicrobial properties',
+                            'Ayurvedic health benefits of copper water',
+                            'Stainless steel tank prevents contamination',
+                            'Anti-bacterial and anti-viral protection',
+                            'Boosts immunity and improves digestion',
+                            'Premium stainless steel construction',
+                            'Hospital-grade hygiene standards'
+                        ],
+                        specifications: {
+                            capacity: '18-22 Liters/Hour',
+                            storage: '15 Liters SS Tank',
+                            stages: '9 Stage + Copper Infusion',
+                            warranty: '5 Years Comprehensive'
+                        }
+                    },
+                    {
+                        id: 12, 
+                        name: 'Model U12 Wall Mount (No Stand)', 
+                        tank: 'Stainless Steel', 
+                        features: 'Space-saving wall-mounted RO system',
+                        benefits: [
+                            'Wall-mount design saves valuable floor space',
+                            'Direct-flow system with instant purification',
+                            'No bulky stand or storage tank needed',
+                            'Ideal for small kitchens and apartments',
+                            'Professional mounting hardware included',
+                            'Sleek stainless steel finish',
+                            'Easy access for maintenance and cleaning'
+                        ],
+                        specifications: {
+                            capacity: '12-15 Liters/Hour Direct Flow',
+                            storage: 'Tankless System',
+                            stages: '6 Stage Direct Flow',
+                            warranty: '2 Years + Installation'
+                        }
+                    },
+                    {
+                        id: 13, 
+                        name: 'Model U13 Premium Stainless Steel', 
+                        tank: 'Stainless Steel', 
+                        features: 'Ultimate premium RO with full stainless steel body',
+                        benefits: [
+                            'Complete stainless steel construction',
+                            'Rust-proof and corrosion-resistant',
+                            'Hospital-grade hygiene and cleanliness',
+                            'Premium mirror finish looks elegant',
+                            'Easy to clean and maintain',
+                            'Long-lasting durability (10+ years)',
+                            'Professional commercial-grade quality'
+                        ],
+                        specifications: {
+                            capacity: '20-25 Liters/Hour',
+                            storage: '18 Liters SS Tank',
+                            stages: '8 Stage Premium',
+                            warranty: '5 Years + Lifetime Support'
+                        }
+                    },
+                    {
+                        id: 14, 
+                        name: 'Model P14 Purifair Tankless', 
+                        tank: 'None', 
+                        features: 'Innovative tankless design for continuous water flow',
+                        benefits: [
+                            'Instant purification with no waiting time',
+                            'No storage tank means no contamination risk',
+                            'Continuous flow up to 25 liters/hour',
+                            'Ultra-compact design saves maximum space',
+                            'Direct-connect system for fresh water always',
+                            'Reduces water wastage significantly',
+                            'Perfect for offices and commercial use'
+                        ],
+                        specifications: {
+                            capacity: '25-30 Liters/Hour Continuous',
+                            storage: 'Tankless - Direct Flow',
+                            stages: '7 Stage Continuous',
+                            warranty: '3 Years + Service'
+                        }
+                    },
+                    {
+                        id: 15, 
+                        name: 'Model U12 Pro White Edition', 
+                        tank: 'Stainless Steel', 
+                        features: 'Professional white finish with stainless steel performance',
+                        benefits: [
+                            'Elegant white exterior with SS internals',
+                            'Professional-grade purification system',
+                            'Smart touch controls with digital display',
+                            'Multi-stage filtration with mineral retention',
+                            'Auto-cleaning system prevents scaling',
+                            'Energy-efficient operation with timer',
+                            'Suitable for both residential and commercial use'
+                        ],
+                        specifications: {
+                            capacity: '18-22 Liters/Hour',
+                            storage: '15 Liters SS Tank',
+                            stages: '8 Stage Professional',
+                            warranty: '4 Years Premium'
+                        }
+                    },
+                    {
+                        id: 16, 
+                        name: 'Model A1 Pro+ Triple Technology', 
+                        tank: 'Black', 
+                        features: 'Triple technology: LED + Alkaline + Premium Design',
+                        benefits: [
+                            'Triple protection: RO + UV + Alkaline',
+                            'Smart LED system with mobile app connectivity',
+                            'Alkaline minerals for health benefits',
+                            'Premium black design with soft-touch controls',
+                            'Advanced filtration removes 99.99% contaminants',
+                            'Smart diagnostics and maintenance alerts',
+                            'Professional installation and training included'
+                        ],
+                        specifications: {
+                            capacity: '20-25 Liters/Hour',
+                            storage: '15 Liters',
+                            stages: '10 Stage Triple Tech',
+                            warranty: '4 Years + Smart AMC'
+                        }
+                    },
+                    {
+                        id: 17, 
+                        name: 'Model K11 Slim Modular Kitchen Special', 
+                        tank: 'Black', 
+                        features: 'Ultra-slim design specially made for modular kitchens',
+                        benefits: [
+                            'Ultra-slim profile fits in tight spaces',
+                            'Designed specifically for modular kitchens',
+                            'Side-mounting option for cabinet installation',
+                            'Sleek black finish matches modern appliances',
+                            'High-efficiency purification in compact size',
+                            'Easy filter access without removing unit',
+                            'Professional modular kitchen installation service'
+                        ],
+                        specifications: {
+                            capacity: '15-18 Liters/Hour',
+                            storage: '12 Liters Slim Tank',
+                            stages: '7 Stage Compact',
+                            warranty: '3 Years + Designer Installation'
+                        }
+                    }
+                ]));
+            }
+
+            if (!localStorage.getItem('services')) {
+                localStorage.setItem('services', JSON.stringify([
+                    {
+                        id: 1, 
+                        icon: 'fas fa-tools', 
+                        title: 'RO Installation Service', 
+                        description: 'Complete professional installation service for all RO brands and models. Our certified technicians handle everything from site assessment to final testing. Includes pipe fitting, electrical connections, wall mounting, and complete system setup with demonstration.',
+                        features: [
+                            'Pre-installation site survey and water testing',
+                            'Professional pipe fitting and electrical work',
+                            'Wall mounting with proper support brackets',
+                            'Complete system setup and configuration',
+                            'Water quality testing and TDS measurement',
+                            'Customer training and operation demonstration',
+                            'Post-installation follow-up and support'
+                        ]
+                    },
+                    {
+                        id: 2, 
+                        icon: 'fas fa-calendar-check', 
+                        title: 'RO AMC (Annual Maintenance Contract)', 
+                        description: 'Comprehensive annual maintenance program ensuring your RO system performs optimally year-round. Includes regular service visits, preventive maintenance, filter replacements, and emergency support with trained technicians.',
+                        features: [
+                            '4 scheduled maintenance visits per year',
+                            'Complete system cleaning and sanitization',
+                            'Filter replacement (pre-filter, post-filter)',
+                            'RO membrane inspection and cleaning',
+                            'Pump and electrical component check',
+                            'Water quality testing and TDS monitoring',
+                            'Emergency breakdown support within 24 hours',
+                            'Detailed service reports and recommendations'
+                        ]
+                    },
+                    {
+                        id: 3, 
+                        icon: 'fas fa-wrench', 
+                        title: 'RO Repair & Emergency Service', 
+                        description: 'Expert repair service for all RO system problems including low water flow, pump issues, leakages, electrical faults, and filter problems. Available 7 days a week with fast response time and genuine spare parts.',
+                        features: [
+                            'Same-day service for emergency repairs',
+                            'Expert diagnosis of all RO system problems',
+                            'Pump repair and replacement service',
+                            'Leak detection and pipe repair',
+                            'Electrical troubleshooting and repairs',
+                            'Filter cleaning and replacement',
+                            'Water flow optimization',
+                            '7 days a week availability including weekends'
+                        ]
+                    },
+                    {
+                        id: 4, 
+                        icon: 'fas fa-sync-alt', 
+                        title: 'RO Subscription Plans', 
+                        description: 'Hassle-free monthly and quarterly subscription plans covering complete RO maintenance, filter replacements, emergency repairs, and priority customer support. Choose from Basic, Standard, or Premium plans.',
+                        features: [
+                            'Monthly/Quarterly flexible payment options',
+                            'All filter replacements included',
+                            'Unlimited service calls and repairs',
+                            'Priority customer support and booking',
+                            '24x7 emergency assistance',
+                            'Water quality monitoring and reports',
+                            'Free annual system upgrade consultation',
+                            'No hidden charges or additional costs'
+                        ]
+                    },
+                    {
+                        id: 5, 
+                        icon: 'fas fa-shopping-cart', 
+                        title: 'RO Filters & Genuine Parts Sale', 
+                        description: 'Complete range of genuine RO filters, membranes, pumps, and spare parts compatible with all major brands. We stock high-quality replacements for Kent, Aquaguard, Pureit, and other popular RO systems.',
+                        features: [
+                            '100% genuine and branded spare parts',
+                            'Compatible with all major RO brands',
+                            'Pre-filters, post-filters, and RO membranes',
+                            'UV lamps, pumps, and electrical components',
+                            'Installation service for purchased parts',
+                            'Bulk ordering for commercial customers',
+                            'Competitive pricing with warranty',
+                            'Expert guidance for part selection'
+                        ]
+                    }
+                ]));
+            }
+
+            if (!localStorage.getItem('faq')) {
+                localStorage.setItem('faq', JSON.stringify([
+                    {id: 1, question: 'Which RO model is best for a family of 4–6 members?', answer: 'For families of 4–6, we recommend models like Model A3 with LED, Model K8 (Black body), or Model K9 (Big storage). These offer 6–12 L storage, LED indicators, and mineral balancing – ideal for daily usage.'},
+                    {id: 2, question: 'Do you provide installation for the RO machine?', answer: 'Yes, we provide same-day installation across Noida, Ghaziabad, and Delhi NCR. Our verified technicians handle everything from pipe fitting to testing. Installation service is included with most purchases.'},
+                    {id: 3, question: 'What is the cost of RO repair or service?', answer: 'Service costs vary based on the issue and model. You\'ll receive transparent pricing before work begins. No hidden charges. Contact us for a detailed quote.'},
+                    {id: 4, question: 'What is an AMC and why do I need it?', answer: 'AMC stands for Annual Maintenance Contract. It includes regular servicing, filter replacement, and breakdown repair. It helps your RO perform well and increases its life. Our AMC plans are customized based on your needs.'},
+                    {id: 5, question: 'Do you use original filters and parts?', answer: 'Yes, we use 100% genuine and brand-compatible filters, membranes, UV/UF kits, and spare parts. All products come with warranty and technician verification.'},
+                    {id: 6, question: 'Can I get support on WhatsApp?', answer: 'Absolutely! Just click here to WhatsApp us or send a message to +91 8929472598 for installation, service requests, or order inquiries.'},
+                    {id: 7, question: 'Do you offer return or replacement?', answer: 'Yes. If the product is defective or the wrong model is delivered, we offer free replacement within 3 days of delivery. Customer satisfaction is our top priority.'},
+                    {id: 8, question: 'Which areas do you serve?', answer: 'We provide service in Noida, Greater Noida, Delhi, Ghaziabad, Vasundhara, Indirapuram, East Delhi, and nearby sectors.'},
+                    {id: 9, question: 'Can I schedule service for a specific time?', answer: 'Yes, you can choose your preferred service time while booking. Our technicians arrive within your selected window and confirm on WhatsApp 30 mins prior.'},
+                    {id: 10, question: 'Do you offer monthly water plans or RO on rent?', answer: 'Yes. We offer RO Subscription Plans for home & commercial use. Contact us on WhatsApp to know available models and pricing.'}
+                ]));
+            }
+
+            if (!localStorage.getItem('gallery')) {
+                localStorage.setItem('gallery', JSON.stringify([
+                    {id: 1, url: 'https://www.callroth.com/wp-content/uploads/2023/04/technician-installing-reverse-osmosis-equipment.jpg', caption: 'Professional RO Installation', category: 'installations'},
+                    {id: 2, url: 'https://www.rightcliq.in/blogs/images/blogs/water-purifier-service.jpg', caption: 'Expert Technician Service', category: 'technicians'},
+                    {id: 3, url: 'https://s.alicdn.com/@sc04/kf/H0fc1f9bf6403425da57008c0f78086a4n.png', caption: 'Model A1 RO System', category: 'products'},
+                    {id: 4, url: 'https://aquafreshrosystem.com/wp-content/uploads/2023/04/004-min-scaled.jpg', caption: 'Happy Customer Installation', category: 'customers'},
+                    {id: 5, url: 'https://www.smaquasalesservices.com/wp-content/uploads/2018/11/eea39c99-f1c3-4b92-ba46-03b7afb415f5.webp', caption: 'Office Installation Project', category: 'installations'},
+                    {id: 6, url: 'https://rodekho.com/wp-content/uploads/2024/09/rodekho-service-technician-image.png', caption: 'Professional Repair Service', category: 'technicians'},
+                    {id: 7, url: 'https://api.globy.com/public/market/64fec7432d1555007933cfc7/photos/64fec7432d1555007933cfd1/64fec7432d1555007933cfd1_lg.webp', caption: 'Alkaline RO Model', category: 'products'},
+                    {id: 8, url: 'https://m.media-amazon.com/images/I/71F5pTupUyL.jpg', caption: 'Large Storage RO Tank', category: 'products'}
+                ]));
+            }
+
+            if (!localStorage.getItem('contacts')) {
+                localStorage.setItem('contacts', JSON.stringify([]));
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeData();
+            loadProducts();
+            loadServices();
+            loadFAQ();
+            loadGallery();
+        });
+
+        // Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the correct nav link if clicked from navigation
+            if (event && event.target.classList.contains('nav-link')) {
+                event.target.classList.add('active');
+            }
+            
+            // Hide mobile menu
+            document.querySelector('.mobile-menu').classList.add('hidden');
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Load Products
+        function loadProducts() {
+            const products = JSON.parse(localStorage.getItem('products') || '[]');
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+            
+            products.forEach(product => {
+                const productImage = productImages[product.name] || 'https://via.placeholder.com/300x200?text=RO+System';
+                
+                const specsList = Object.entries(product.specifications).map(([key, value]) => 
+                    `<div class="flex justify-between text-sm"><span class="font-medium">${key}:</span><span>${value}</span></div>`
+                ).join('');
+
+                const productCard = `
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="h-48 overflow-hidden">
+                            <img src="${productImage}" alt="${product.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">${product.name}</h3>
+                            <div class="mb-3">
+                                <span class="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">Tank: ${product.tank}</span>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-gray-700 text-sm font-medium mb-2">${product.features}</p>
+                            </div>
+                            
+                            <!-- Key Benefits -->
+                            <div class="mb-4">
+                                <h4 class="font-semibold text-sm mb-2 text-blue-800">Key Benefits:</h4>
+                                <div class="space-y-1">
+                                    ${product.benefits.slice(0, 3).map(benefit => 
+                                        `<div class="flex items-start text-xs"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>${benefit}</span></div>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                            
+                            <!-- Specifications -->
+                            <div class="mb-4 p-3 bg-gray-50 rounded">
+                                <h4 class="font-semibold text-sm mb-2 text-blue-800">Specifications:</h4>
+                                <div class="space-y-1 text-xs">
+                                    ${specsList}
+                                </div>
+                            </div>
+                            
+                            <a href="https://wa.me/918929472598?text=I%20want%20to%20know%20more%20about%20${encodeURIComponent(product.name)}" 
+                               class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg inline-flex items-center justify-center transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>Get Quote on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += productCard;
+            });
+        }
+
+        // Load Services
+        function loadServices() {
+            const services = JSON.parse(localStorage.getItem('services') || '[]');
+            const grid = document.getElementById('services-grid');
+            grid.innerHTML = '';
+            
+            services.forEach(service => {
+                const serviceImage = serviceImages[service.title] || 'https://via.placeholder.com/400x200?text=Service';
+                
+                const featuresList = service.features.map(feature => 
+                    `<div class="flex items-start text-sm mb-2"><i class="fas fa-check text-green-500 mr-2 mt-1"></i><span>${feature}</span></div>`
+                ).join('');
+
+                const serviceCard = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <div class="mb-4">
+                            <img src="${serviceImage}" alt="${service.title}" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="${service.icon} text-3xl text-blue-600 mr-4"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold mb-3">${service.title}</h3>
+                                <p class="text-gray-700 mb-4">${service.description}</p>
+                                
+                                <!-- Service Features -->
+                                <div class="mb-4">
+                                    <h4 class="font-semibold text-sm mb-2 text-blue-800">What's Included:</h4>
+                                    <div class="benefit-card p-3 rounded">
+                                        ${featuresList}
+                                    </div>
+                                </div>
+                                
+                                <div class="flex gap-3">
+                                    <a href="https://wa.me/918929472598?text=I%20need%20${encodeURIComponent(service.title)}" 
+                                       class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                                        <i class="fab fa-whatsapp mr-2"></i>Book Now
+                                    </a>
+                                    <a href="tel:8929472598" 
+                                       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg inline-flex items-center">
+                                        <i class="fas fa-phone mr-2"></i>Call
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += serviceCard;
+            });
+        }
+
+        // Load FAQ
+        function loadFAQ() {
+            const faqs = JSON.parse(localStorage.getItem('faq') || '[]');
+            const list = document.getElementById('faq-list');
+            list.innerHTML = '';
+            
+            faqs.forEach(faq => {
+                const faqItem = `
+                    <div class="bg-white rounded-lg shadow">
+                        <button class="faq-question w-full text-left p-4 font-semibold hover:bg-gray-50 focus:outline-none" 
+                                onclick="toggleFAQ(${faq.id})">
+                            <div class="flex justify-between items-center">
+                                <span>${faq.question}</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="faq-icon-${faq.id}"></i>
+                            </div>
+                        </button>
+                        <div class="accordion-content p-4 pt-0" id="faq-content-${faq.id}">
+                            <p class="text-gray-700">${faq.answer}</p>
+                        </div>
+                    </div>
+                `;
+                list.innerHTML += faqItem;
+            });
+        }
+
+        // Load Gallery  
+        function loadGallery() {
+            const gallery = JSON.parse(localStorage.getItem('gallery') || '[]');
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+            
+            gallery.forEach(item => {
+                const galleryItem = `
+                    <div class="gallery-item" data-category="${item.category}">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="${item.url}" alt="${item.caption}" 
+                                 class="w-full h-48 object-cover gallery-img cursor-pointer"
+                                 onclick="openLightbox('${item.url}')">
+                            <div class="p-4">
+                                <p class="text-sm font-semibold">${item.caption}</p>
+                                <span class="text-xs text-gray-500 capitalize">${item.category}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += galleryItem;
+            });
+        }
+
+        // Gallery Filter
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('gallery-filter')) {
+                // Update active filter button
+                document.querySelectorAll('.gallery-filter').forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                e.target.classList.remove('bg-gray-200', 'text-gray-700');
+                e.target.classList.add('bg-blue-600', 'text-white');
+                
+                // Filter gallery items
+                const filter = e.target.dataset.filter;
+                const items = document.querySelectorAll('.gallery-item');
+                
+                items.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // FAQ Search
+        document.getElementById('faq-search').addEventListener('input', function(e) {
+            const search = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('#faq-list > div');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.accordion-content p').textContent.toLowerCase();
+                
+                if (question.includes(search) || answer.includes(search)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Contact Form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('contact-name').value,
+                mobile: document.getElementById('contact-mobile').value,
+                email: document.getElementById('contact-email').value,
+                message: document.getElementById('contact-message').value,
+                date: new Date().toISOString()
+            };
+            
+            // Save to localStorage
+            const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+            contacts.push({...formData, id: Date.now()});
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+            
+            alert('Thank you! We\'ll contact you soon.');
+            this.reset();
+        });
+
+        // Close lightbox on click outside
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
